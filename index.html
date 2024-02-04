@@ -28,18 +28,14 @@
 						assetsURI: "assets.epk",
 						localesURI: "lang/",
 						servers: [
-							/* example: { addr: "ws://localhost:8081/", name: "Local test server" } */
+							{ addr: "ws://localhost:8081/", name: "Games And Things MC Testing Server" } 
 						]
 					};
 					
 					// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 					
-					var q = window.location.search;
-					if(typeof q === "string" && q.startsWith("?")) {
-						q = new URLSearchParams(q);
-						var s = q.get("server");
-						if(s) window.eaglercraftXOpts.joinServer = s;
-					}
+					 window.eaglercraftXOpts.joinServer = "c11e-2a09-bac5-12f-105-00-1a-e5.ngrok-free.app";
+					
 					
 					main();
 					
