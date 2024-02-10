@@ -271,8 +271,8 @@ svg:not(:root) {
 
 @font-face {
   font-family: 'Minecraft';
-  src: url("/classic/assets/fonts/minecraftfont.eot");
-  src: url("/classic/assets/fonts/minecraftfont.woff") format("woff"), url("/classic/assets/fonts/minecraftfont.ttf") format("truetype"); }
+  src: url("mc/classic/assets/fonts/minecraftfont.eot");
+  src: url("mc/classic/assets/fonts/minecraftfont.woff") format("woff"), url("mc/classic/assets/fonts/minecraftfont.ttf") format("truetype"); }
 
 #progress {
   position: absolute;
