@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Play minecraft 1.8 in your browser" />
+	<meta name="keywords" content="eaglercraft, eaglercraftx, minecraft, 1.8, 1.8.8" />
+	<title>EaglercraftX 1.8</title>
+	<meta property="og:locale" content="en-US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="EaglercraftX 1.8" />
+	<meta property="og:description" content="Play minecraft 1.8 in your browser" />
+	<meta property="og:image" content="favicon.png" />
+	<link type="image/png" rel="shortcut icon" href="favicon.png" />
+	<script type="text/javascript" src="classes.js"></script>
+	<script type="text/javascript">
+		"use strict";
+		window.addEventListener("load", () => {
+			if (document.location.href.startsWith("file:")) {
+				alert("HTTP please, do not open this file locally, run a local HTTP server and load it via HTTP");
+			} else {
+
+				// %%%%%%%%% launch options %%%%%%%%%%%%
+				const relayId = 0;
+
+
+				window.eaglercraftXOpts = {
+					hintsVersion: 1,
+					demoMode: false,
+					container: "game_frame",
+					worldsDB: "worlds",
+					assetsURI: "assets.epk",
+					localesURI: "lang/",
+					worldsDB: "worlds",
+					relays: [
+						{ addr: "wss://eaglerrelay.glitch.me/", comment: "Eagler relay #1", primary: relayId === 0 },
+						{ addr: "wss://relay.deev.is/", comment: "lax1dude relay #1", primary: relayId === 1 },
+						{ addr: "wss://relay.lax1dude.net/", comment: "lax1dude relay #2", primary: relayId === 2 },
+						{ addr: "wss://relay.shhnowisnottheti.me/", comment: "ayunami relay #1", primary: relayId === 3 }
+					],
+					servers: [
+						{ addr: "wss://mcus1.dxomg.link", name: "★ Own MC Java? Join Normal Servers Here!                [1.8.8]" },
+						{ addr: "wss://aeon-network.net/1.8", name: "★ Aeon Network [1.8.8]" },
+						{ addr: "wss://mc.arch.lol", name: "★ ArchMC [1.8.8]" },
+						{ addr: "wss://mc.arch.mba", name: "★ ArchMC #2 [1.8.8]" },
+						{ addr: "wss://mc.asspixel.net", name: "★ Asspixel (Hypixel Knockoff) [1.5.2-1.8.8]", hideAddress: true },
+						{ addr: "wss://clever-teaching.com/web/", name: "★ Clever Teaching [1.8.8]"},
+						{ addr: "wss://sus.shhnowisnottheti.me", name: "★ Creacraft [1.5.2-1.8.8]" },
+						{ addr: "wss://legxndsmp.minecraft.pe", name: "★ LegendSMP [1.8.8]", },
+						{ addr: "wss://mc.ricenetwork.xyz", name: "★ RiceNetwork [1.8.8]" },
+						{ addr: "wss://mc.zyth.me", name: "★ ZythMC [1.8.8]" },
+						{ addr: "nearly-lucky-beetle.ngrok-free.app", name: "★ Games And Things MC Testing Server" },
+					],
+					checkRelaysForUpdates: false
+				};
+
+
+				// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+				var q = window.location.search;
+				if (typeof q === "string" && q.startsWith("?")) {
+					q = new URLSearchParams(q);
+					var s = q.get("server");
+					if (s) window.eaglercraftXOpts.joinServer = s;
+				}
+
+				main();
+
+			}
+		});
+	</script>
+</head>
+
+<body style="margin:0px;width:100vw;height:100vh;overflow:hidden;" id="game_frame">
+</body>
+
+</html>
